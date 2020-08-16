@@ -70,4 +70,14 @@ public class TicTacToeGameTest {
 
     }
 
+    @Test
+    public void checkIfNumberOfCellsFilledIsTwoForOneMoveEachByBothPlayers() {
+
+        TIC_TAC_TOE_GAME.markPlayerAtRowColumnInGameBoard(FIRST_PLAYER, GIRD_ZERO, GIRD_ZERO);
+
+        TIC_TAC_TOE_GAME.markPlayerAtRowColumnInGameBoard(SECOND_PLAYER, GIRD_ZERO, GRID_ONE);
+
+        assertEquals(2, TIC_TAC_TOE_GAME.getNumberOfCellsFilled());
+
+    }
 }
