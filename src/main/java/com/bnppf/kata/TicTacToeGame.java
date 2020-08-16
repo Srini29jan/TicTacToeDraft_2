@@ -16,4 +16,8 @@ public class TicTacToeGame {
     public void markPlayerXAtRowZeroColumnZeroInGameBoard() {
         ticTacToeGameBoard[GRID_ZERO][GRID_ZERO] = FIRST_PLAYER;
     }
+
+    public void markPlayerOAtRowZeroColumnOneInGameBoard() {
+        ticTacToeGameBoard[GRID_ZERO][1] = 'O';
+    }
 }

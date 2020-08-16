@@ -45,4 +45,13 @@ public class TicTacToeGameTest {
         assertEquals(FIRST_PLAYER, TIC_TAC_TOE_GAME.getTicTacToeGameBoard(GIRD_ZERO, GIRD_ZERO));
 
     }
+
+    @Test
+    public void checkIfOIsMarkedAtRowZeroColumnOneIfPlayerOPlaysAtRowZeroColumnOneInGameBoard() {
+
+        TIC_TAC_TOE_GAME.markPlayerOAtRowZeroColumnOneInGameBoard();
+
+        assertEquals('O', TIC_TAC_TOE_GAME.getTicTacToeGameBoard(GIRD_ZERO, 1));
+
+    }
 }
