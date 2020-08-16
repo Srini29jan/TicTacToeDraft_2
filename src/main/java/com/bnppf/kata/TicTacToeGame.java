@@ -23,7 +23,7 @@ public class TicTacToeGame {
     }
 
     public void markPlayerAtRowColumnInGameBoard(char player, int row, int column) throws InvalidMoveException {
-        if(row <= UPPER_LIMIT_OF_ROW) {
+        if(row >= 0 && row <= UPPER_LIMIT_OF_ROW) {
             ticTacToeGameBoard[row][column] = player;
             numberOfCellsFilled++;
         } else {
