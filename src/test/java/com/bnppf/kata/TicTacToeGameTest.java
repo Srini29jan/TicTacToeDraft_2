@@ -13,6 +13,8 @@ public class TicTacToeGameTest {
 
     private static final int GIRD_ZERO = 0;
 
+    private static final int INVALID_ROW_NUMBER_THREE = 3;
+
     private static final int ONE_CELL_FILLED = 1;
 
     private static final int TWO_CELLS_FILLED = 2;
@@ -122,7 +124,7 @@ public class TicTacToeGameTest {
     @Test(expected = InvalidMoveException.class)
     public void checkIfExceptionIsThrownIfInputRowIsGreaterThanTwo() throws InvalidMoveException {
 
-        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(3, GIRD_ZERO);
+        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(INVALID_ROW_NUMBER_THREE, GIRD_ZERO);
 
     }
 }
