@@ -143,4 +143,11 @@ public class TicTacToeGameTest {
         TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GIRD_ZERO, INVALID_ROW_OR_COLUMN_NUMBER_THREE);
 
     }
+
+    @Test(expected = InvalidMoveException.class)
+    public void checkIfExceptionIsThrownIfInputColumnIsLessThanZero() throws InvalidMoveException {
+
+        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GIRD_ZERO, -1);
+
+    }
 }
