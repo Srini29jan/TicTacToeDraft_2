@@ -1,5 +1,7 @@
 package com.bnppf.kata;
 
+import com.bnppf.kata.exception.InvalidMoveException;
+
 public class TicTacToeGame {
     private static final int GRID_ONE = 1;
     private static final int GRID_ZERO = 0;
@@ -18,12 +20,16 @@ public class TicTacToeGame {
         return ticTacToeGameBoard[row][column];
     }
 
-    public void markPlayerAtRowColumnInGameBoard(char player, int row, int column) {
-        ticTacToeGameBoard[row][column] = player;
-        numberOfCellsFilled++;
+    public void markPlayerAtRowColumnInGameBoard(char player, int row, int column) throws InvalidMoveException {
+        if(row <= 2) {
+            ticTacToeGameBoard[row][column] = player;
+            numberOfCellsFilled++;
+        } else {
+            throw new InvalidMoveException("The position selected is invalid. Please select a number from 0, 1 or 2");
+        }
     }
 
-    public void markCurrentPlayerAtRowColumnInGameBoard(int row, int column) {
+    public void markCurrentPlayerAtRowColumnInGameBoard(int row, int column) throws InvalidMoveException {
         markPlayerAtRowColumnInGameBoard(getCurrentPlayer(), row, column);
     }
 

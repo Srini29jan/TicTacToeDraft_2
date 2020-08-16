@@ -1,5 +1,6 @@
 package com.bnppf.kata;
 
+import com.bnppf.kata.exception.InvalidMoveException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -46,7 +47,7 @@ public class TicTacToeGameTest {
     }
 
     @Test
-    public void checkIfXIsMarkedAtRowZeroColumnZeroIfPlayerXPlaysAtRowZeroColumnZeroInGameBoard() {
+    public void checkIfXIsMarkedAtRowZeroColumnZeroIfPlayerXPlaysAtRowZeroColumnZeroInGameBoard() throws InvalidMoveException {
 
         TIC_TAC_TOE_GAME.markPlayerAtRowColumnInGameBoard(FIRST_PLAYER, GIRD_ZERO, GIRD_ZERO);
 
@@ -55,7 +56,7 @@ public class TicTacToeGameTest {
     }
 
     @Test
-    public void checkIfOIsMarkedAtRowZeroColumnOneIfPlayerOPlaysAtRowZeroColumnOneInGameBoard() {
+    public void checkIfOIsMarkedAtRowZeroColumnOneIfPlayerOPlaysAtRowZeroColumnOneInGameBoard() throws InvalidMoveException {
 
         TIC_TAC_TOE_GAME.markPlayerAtRowColumnInGameBoard(SECOND_PLAYER, GIRD_ZERO, GRID_ONE);
 
@@ -64,7 +65,7 @@ public class TicTacToeGameTest {
     }
 
     @Test
-    public void checkIfNumberOfCellsFilledIsOneForOneMoveByAPlayer() {
+    public void checkIfNumberOfCellsFilledIsOneForOneMoveByAPlayer() throws InvalidMoveException {
 
         TIC_TAC_TOE_GAME.markPlayerAtRowColumnInGameBoard(FIRST_PLAYER, GIRD_ZERO, GIRD_ZERO);
 
@@ -73,7 +74,7 @@ public class TicTacToeGameTest {
     }
 
     @Test
-    public void checkIfNumberOfCellsFilledIsTwoForOneMoveEachByBothPlayers() {
+    public void checkIfNumberOfCellsFilledIsTwoForOneMoveEachByBothPlayers() throws InvalidMoveException {
 
         TIC_TAC_TOE_GAME.markPlayerAtRowColumnInGameBoard(FIRST_PLAYER, GIRD_ZERO, GIRD_ZERO);
 
@@ -91,7 +92,7 @@ public class TicTacToeGameTest {
     }
 
     @Test
-    public void checkIfCurrentPlayerIsOAfterFirstMove() {
+    public void checkIfCurrentPlayerIsOAfterFirstMove() throws InvalidMoveException {
 
         TIC_TAC_TOE_GAME.markPlayerAtRowColumnInGameBoard(FIRST_PLAYER, GIRD_ZERO, GIRD_ZERO);
 
@@ -100,7 +101,7 @@ public class TicTacToeGameTest {
     }
 
     @Test
-    public void checkIfTheBoardReturnsXFromTheRowZeroColumnZeroInWhichTheFirstMoveIsMade() {
+    public void checkIfTheBoardReturnsXFromTheRowZeroColumnZeroInWhichTheFirstMoveIsMade() throws InvalidMoveException {
 
         TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GIRD_ZERO, GIRD_ZERO);
 
@@ -108,13 +109,20 @@ public class TicTacToeGameTest {
 
     }
     @Test
-    public void checkIfTheBoardReturnsOFromTheRowZeroColumnOneInWhichTheSecondMoveIsMade() {
+    public void checkIfTheBoardReturnsOFromTheRowZeroColumnOneInWhichTheSecondMoveIsMade() throws InvalidMoveException {
 
         TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GIRD_ZERO, GIRD_ZERO);
 
         TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GIRD_ZERO, GRID_ONE);
 
         assertEquals(SECOND_PLAYER, TIC_TAC_TOE_GAME.getTicTacToeGameBoard(GIRD_ZERO, GRID_ONE));
+
+    }
+
+    @Test(expected = InvalidMoveException.class)
+    public void checkIfExceptionIsThrownIfInputRowIsGreaterThanTwo() throws InvalidMoveException {
+
+        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(3, GIRD_ZERO);
 
     }
 }
