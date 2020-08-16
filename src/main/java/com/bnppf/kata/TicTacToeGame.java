@@ -10,4 +10,8 @@ public class TicTacToeGame {
     public char getTicTacToeGameBoard(int row, int column) {
         return ticTacToeGameBoard[row][column];
     }
+
+    public void markPlayerXAtRowZeroColumnZeroInGameBoard() {
+        ticTacToeGameBoard[0][0] = 'X';
+    }
 }
