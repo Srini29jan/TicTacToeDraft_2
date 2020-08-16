@@ -59,4 +59,13 @@ public class TicTacToeGameTest {
 
     }
 
+    @Test
+    public void checkIfNumberOfCellsFilledIsOneForOneMoveByAPlayer() {
+
+        TIC_TAC_TOE_GAME.markPlayerAtRowColumnInGameBoard(FIRST_PLAYER, GIRD_ZERO, GIRD_ZERO);
+
+        assertEquals(1, TIC_TAC_TOE_GAME.getNumberOfCellsFilled());
+
+    }
+
 }

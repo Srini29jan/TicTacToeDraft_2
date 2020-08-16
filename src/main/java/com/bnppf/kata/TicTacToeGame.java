@@ -7,6 +7,7 @@ public class TicTacToeGame {
     private static final char FIRST_PLAYER = 'X';
     private static final char SECOND_PLAYER = 'O';
     private char[][] ticTacToeGameBoard;
+    private int numberOfCellsFilled;
 
     public TicTacToeGame() {
         ticTacToeGameBoard = new char[NUMBER_OF_GRIDS_IN_GAME_BOARD][NUMBER_OF_GRIDS_IN_GAME_BOARD];
@@ -17,5 +18,10 @@ public class TicTacToeGame {
 
     public void markPlayerAtRowColumnInGameBoard(char player, int row, int column) {
         ticTacToeGameBoard[row][column] = player;
+        numberOfCellsFilled++;
+    }
+
+    public int getNumberOfCellsFilled() {
+        return numberOfCellsFilled;
     }
 }
