@@ -14,6 +14,8 @@ public class TicTacToeGameTest {
 
     private static final int ONE_CELL_FILLED = 1;
 
+    private static final int TWO_CELLS_FILLED = 2;
+
     private static final char FIRST_PLAYER = 'X';
 
     private static final char INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD = '\0';
@@ -77,7 +79,7 @@ public class TicTacToeGameTest {
 
         TIC_TAC_TOE_GAME.markPlayerAtRowColumnInGameBoard(SECOND_PLAYER, GIRD_ZERO, GRID_ONE);
 
-        assertEquals(2, TIC_TAC_TOE_GAME.getNumberOfCellsFilled());
+        assertEquals(TWO_CELLS_FILLED, TIC_TAC_TOE_GAME.getNumberOfCellsFilled());
 
     }
 }
