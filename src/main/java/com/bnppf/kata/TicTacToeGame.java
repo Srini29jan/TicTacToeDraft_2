@@ -19,17 +19,22 @@ public class TicTacToeGame {
     public TicTacToeGame() {
         ticTacToeGameBoard = new char[NUMBER_OF_GRIDS_IN_GAME_BOARD][NUMBER_OF_GRIDS_IN_GAME_BOARD];
     }
+
     public char getTicTacToeGameBoard(int row, int column) {
         return ticTacToeGameBoard[row][column];
     }
 
     public void markPlayerAtRowColumnInGameBoard(char player, int row, int column) throws InvalidMoveException {
-        if(row >= LOWER_LIMIT_OF_ROW_AND_COLUMN && row <= UPPER_LIMIT_OF_ROW_AND_COLUMN && column >= LOWER_LIMIT_OF_ROW_AND_COLUMN && column <= UPPER_LIMIT_OF_ROW_AND_COLUMN) {
+        if(isRowAndColumnWithinUpperAndLowerLimit(row, column)) {
             ticTacToeGameBoard[row][column] = player;
             numberOfCellsFilled++;
         } else {
             throw new InvalidMoveException(MESSAGE_FOR_INVALID_POSITION);
         }
+    }
+
+    private boolean isRowAndColumnWithinUpperAndLowerLimit(int row, int column) {
+        return row >= LOWER_LIMIT_OF_ROW_AND_COLUMN && row <= UPPER_LIMIT_OF_ROW_AND_COLUMN && column >= LOWER_LIMIT_OF_ROW_AND_COLUMN && column <= UPPER_LIMIT_OF_ROW_AND_COLUMN;
     }
 
     public void markCurrentPlayerAtRowColumnInGameBoard(int row, int column) throws InvalidMoveException {
