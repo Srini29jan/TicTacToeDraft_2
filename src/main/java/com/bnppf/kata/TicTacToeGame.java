@@ -28,4 +28,8 @@ public class TicTacToeGame {
     public char getCurrentPlayerBeforeFirstMove() {
         return FIRST_PLAYER;
     }
+
+    public char getCurrentPlayerAfterFirstMove() {
+        return SECOND_PLAYER;
+    }
 }
