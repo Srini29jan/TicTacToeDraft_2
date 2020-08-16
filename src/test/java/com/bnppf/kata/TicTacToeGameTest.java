@@ -44,7 +44,7 @@ public class TicTacToeGameTest {
     @Test
     public void checkIfXIsMarkedAtRowZeroColumnZeroIfPlayerXPlaysAtRowZeroColumnZeroInGameBoard() {
 
-        TIC_TAC_TOE_GAME.markPlayerXAtRowZeroColumnZeroInGameBoard();
+        TIC_TAC_TOE_GAME.markPlayerAtRowColumnInGameBoard(FIRST_PLAYER, GIRD_ZERO, GIRD_ZERO);
 
         assertEquals(FIRST_PLAYER, TIC_TAC_TOE_GAME.getTicTacToeGameBoard(GIRD_ZERO, GIRD_ZERO));
 
@@ -53,9 +53,10 @@ public class TicTacToeGameTest {
     @Test
     public void checkIfOIsMarkedAtRowZeroColumnOneIfPlayerOPlaysAtRowZeroColumnOneInGameBoard() {
 
-        TIC_TAC_TOE_GAME.markPlayerOAtRowZeroColumnOneInGameBoard();
+        TIC_TAC_TOE_GAME.markPlayerAtRowColumnInGameBoard(SECOND_PLAYER, GIRD_ZERO, GRID_ONE);
 
         assertEquals(SECOND_PLAYER, TIC_TAC_TOE_GAME.getTicTacToeGameBoard(GIRD_ZERO, GRID_ONE));
 
     }
+
 }

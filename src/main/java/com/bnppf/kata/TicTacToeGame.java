@@ -15,11 +15,7 @@ public class TicTacToeGame {
         return ticTacToeGameBoard[row][column];
     }
 
-    public void markPlayerXAtRowZeroColumnZeroInGameBoard() {
-        ticTacToeGameBoard[GRID_ZERO][GRID_ZERO] = FIRST_PLAYER;
-    }
-
-    public void markPlayerOAtRowZeroColumnOneInGameBoard() {
-        ticTacToeGameBoard[GRID_ZERO][GRID_ONE] = SECOND_PLAYER;
+    public void markPlayerAtRowColumnInGameBoard(char player, int row, int column) {
+        ticTacToeGameBoard[row][column] = player;
     }
 }
