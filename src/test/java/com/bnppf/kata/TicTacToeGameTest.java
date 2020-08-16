@@ -150,4 +150,13 @@ public class TicTacToeGameTest {
         TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GIRD_ZERO, INVALID_ROW_OR_COLUMN_NUMBER_NEGATIVE_ONE);
 
     }
+
+    @Test(expected = InvalidMoveException.class)
+    public void checkIfExceptionIsThrownIfSamePositionIsPlayedTwice() throws InvalidMoveException {
+
+        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GIRD_ZERO, GIRD_ZERO);
+
+        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GIRD_ZERO, GIRD_ZERO);
+
+    }
 }
