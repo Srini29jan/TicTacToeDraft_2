@@ -28,7 +28,7 @@ public class TicTacToeGame {
 
     public void markPlayerAtRowColumnInGameBoard(char player, int row, int column) throws InvalidMoveException {
         if(isRowAndColumnWithinUpperAndLowerLimit(row, column)) {
-            if(getTicTacToeGameBoard(row, column) == INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD) {
+            if(isPositionNotAlreadyOccupiedInGameBoard(row, column)) {
                 ticTacToeGameBoard[row][column] = player;
                 numberOfCellsFilled++;
             } else {
@@ -37,6 +37,10 @@ public class TicTacToeGame {
         } else {
             throw new InvalidMoveException(MESSAGE_FOR_INVALID_POSITION);
         }
+    }
+
+    private boolean isPositionNotAlreadyOccupiedInGameBoard(int row, int column) {
+        return getTicTacToeGameBoard(row, column) == INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD;
     }
 
     private boolean isRowAndColumnWithinUpperAndLowerLimit(int row, int column) {
