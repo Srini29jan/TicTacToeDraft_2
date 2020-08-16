@@ -4,6 +4,8 @@ public class TicTacToeGame {
     private static final int GRID_ONE = 1;
     private static final int GRID_ZERO = 0;
     private static final int NUMBER_OF_GRIDS_IN_GAME_BOARD = 3;
+    private static final int NUMBER_TWO = 2;
+    private static final int NUMBER_ZERO = 0;
     private static final char FIRST_PLAYER = 'X';
     private static final char SECOND_PLAYER = 'O';
     private char[][] ticTacToeGameBoard;
@@ -26,6 +28,6 @@ public class TicTacToeGame {
     }
 
     public char getCurrentPlayer() {
-        return numberOfCellsFilled % 2 == 0? FIRST_PLAYER : SECOND_PLAYER;
+        return numberOfCellsFilled % NUMBER_TWO == NUMBER_ZERO ? FIRST_PLAYER : SECOND_PLAYER;
     }
 }
