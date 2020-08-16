@@ -25,11 +25,7 @@ public class TicTacToeGame {
         return numberOfCellsFilled;
     }
 
-    public char getCurrentPlayerBeforeFirstMove() {
-        return FIRST_PLAYER;
-    }
-
-    public char getCurrentPlayerAfterFirstMove() {
-        return SECOND_PLAYER;
+    public char getCurrentPlayer() {
+        return numberOfCellsFilled % 2 == 0? FIRST_PLAYER : SECOND_PLAYER;
     }
 }

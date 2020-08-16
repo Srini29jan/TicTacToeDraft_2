@@ -86,7 +86,7 @@ public class TicTacToeGameTest {
     @Test
     public void checkIfCurrentPlayerIsXBeforeFirstMove() {
 
-        assertEquals(FIRST_PLAYER, TIC_TAC_TOE_GAME.getCurrentPlayerBeforeFirstMove());
+        assertEquals(FIRST_PLAYER, TIC_TAC_TOE_GAME.getCurrentPlayer());
 
     }
 
@@ -95,7 +95,7 @@ public class TicTacToeGameTest {
 
         TIC_TAC_TOE_GAME.markPlayerAtRowColumnInGameBoard(FIRST_PLAYER, GIRD_ZERO, GIRD_ZERO);
 
-        assertEquals(SECOND_PLAYER, TIC_TAC_TOE_GAME.getCurrentPlayerAfterFirstMove());
+        assertEquals(SECOND_PLAYER, TIC_TAC_TOE_GAME.getCurrentPlayer());
 
     }
 }
