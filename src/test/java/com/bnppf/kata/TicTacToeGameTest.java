@@ -8,11 +8,15 @@ import static org.junit.Assert.assertNotNull;
 
 public class TicTacToeGameTest {
 
+    private static final int GRID_ONE = 1;
+
     private static final int GIRD_ZERO = 0;
 
     private static final char FIRST_PLAYER = 'X';
 
     private static final char INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD = '\0';
+
+    private static final char SECOND_PLAYER = 'O';
 
     private TicTacToeGame TIC_TAC_TOE_GAME;
 
@@ -51,7 +55,7 @@ public class TicTacToeGameTest {
 
         TIC_TAC_TOE_GAME.markPlayerOAtRowZeroColumnOneInGameBoard();
 
-        assertEquals('O', TIC_TAC_TOE_GAME.getTicTacToeGameBoard(GIRD_ZERO, 1));
+        assertEquals(SECOND_PLAYER, TIC_TAC_TOE_GAME.getTicTacToeGameBoard(GIRD_ZERO, GRID_ONE));
 
     }
 }

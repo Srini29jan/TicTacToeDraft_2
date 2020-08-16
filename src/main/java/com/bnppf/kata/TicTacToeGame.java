@@ -1,9 +1,11 @@
 package com.bnppf.kata;
 
 public class TicTacToeGame {
+    private static final int GRID_ONE = 1;
     private static final int GRID_ZERO = 0;
     private static final int NUMBER_OF_GRIDS_IN_GAME_BOARD = 3;
     private static final char FIRST_PLAYER = 'X';
+    private static final char SECOND_PLAYER = 'O';
     private char[][] ticTacToeGameBoard;
 
     public TicTacToeGame() {
@@ -18,6 +20,6 @@ public class TicTacToeGame {
     }
 
     public void markPlayerOAtRowZeroColumnOneInGameBoard() {
-        ticTacToeGameBoard[GRID_ZERO][1] = 'O';
+        ticTacToeGameBoard[GRID_ZERO][GRID_ONE] = SECOND_PLAYER;
     }
 }
