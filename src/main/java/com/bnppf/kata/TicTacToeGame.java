@@ -23,6 +23,10 @@ public class TicTacToeGame {
         numberOfCellsFilled++;
     }
 
+    public void markCurrentPlayerAtRowColumnInGameBoard(int row, int column) {
+        markPlayerAtRowColumnInGameBoard(getCurrentPlayer(), row, column);
+    }
+
     public int getNumberOfCellsFilled() {
         return numberOfCellsFilled;
     }

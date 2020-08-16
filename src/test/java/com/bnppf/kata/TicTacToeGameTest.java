@@ -98,4 +98,13 @@ public class TicTacToeGameTest {
         assertEquals(SECOND_PLAYER, TIC_TAC_TOE_GAME.getCurrentPlayer());
 
     }
+
+    @Test
+    public void checkIfTheBoardReturnsXFromTheRowZeroColumnZeroInWhichTheFirstMoveIsMade() {
+
+        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GIRD_ZERO, GIRD_ZERO);
+
+        assertEquals(FIRST_PLAYER, TIC_TAC_TOE_GAME.getTicTacToeGameBoard(GIRD_ZERO, GIRD_ZERO));
+
+    }
 }
