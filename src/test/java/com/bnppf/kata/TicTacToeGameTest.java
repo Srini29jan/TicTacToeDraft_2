@@ -137,4 +137,10 @@ public class TicTacToeGameTest {
 
     }
 
+    @Test(expected = InvalidMoveException.class)
+    public void checkIfExceptionIsThrownIfInputColumnIsGreaterThanTwo() throws InvalidMoveException {
+
+        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GIRD_ZERO, 3);
+
+    }
 }
