@@ -82,4 +82,11 @@ public class TicTacToeGameTest {
         assertEquals(TWO_CELLS_FILLED, TIC_TAC_TOE_GAME.getNumberOfCellsFilled());
 
     }
+
+    @Test
+    public void checkIfCurrentPlayerIsXBeforeFirstMove() {
+
+        assertEquals(FIRST_PLAYER, TIC_TAC_TOE_GAME.getCurrentPlayerBeforeFirstMove());
+
+    }
 }

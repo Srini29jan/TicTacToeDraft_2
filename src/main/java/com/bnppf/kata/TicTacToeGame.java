@@ -24,4 +24,8 @@ public class TicTacToeGame {
     public int getNumberOfCellsFilled() {
         return numberOfCellsFilled;
     }
+
+    public char getCurrentPlayerBeforeFirstMove() {
+        return FIRST_PLAYER;
+    }
 }
