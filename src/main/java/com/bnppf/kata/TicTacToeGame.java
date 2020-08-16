@@ -5,7 +5,7 @@ import com.bnppf.kata.exception.InvalidMoveException;
 public class TicTacToeGame {
     private static final int GRID_ONE = 1;
     private static final int GRID_ZERO = 0;
-    private static final int LOWER_LIMIT_OF_ROW = 0;
+    private static final int LOWER_LIMIT_OF_ROW_AND_COLUMN = 0;
     private static final int NUMBER_OF_GRIDS_IN_GAME_BOARD = 3;
     private static final int NUMBER_TWO = 2;
     private static final int NUMBER_ZERO = 0;
@@ -24,7 +24,7 @@ public class TicTacToeGame {
     }
 
     public void markPlayerAtRowColumnInGameBoard(char player, int row, int column) throws InvalidMoveException {
-        if(row >= LOWER_LIMIT_OF_ROW && row <= UPPER_LIMIT_OF_ROW_AND_COLUMN && column >= 0 && column <= UPPER_LIMIT_OF_ROW_AND_COLUMN) {
+        if(row >= LOWER_LIMIT_OF_ROW_AND_COLUMN && row <= UPPER_LIMIT_OF_ROW_AND_COLUMN && column >= LOWER_LIMIT_OF_ROW_AND_COLUMN && column <= UPPER_LIMIT_OF_ROW_AND_COLUMN) {
             ticTacToeGameBoard[row][column] = player;
             numberOfCellsFilled++;
         } else {
