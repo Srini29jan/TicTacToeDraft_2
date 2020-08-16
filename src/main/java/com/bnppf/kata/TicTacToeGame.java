@@ -11,7 +11,9 @@ public class TicTacToeGame {
     private static final int NUMBER_ZERO = 0;
     private static final int UPPER_LIMIT_OF_ROW_AND_COLUMN = 2;
     private static final char FIRST_PLAYER = 'X';
+    private static final char INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD = '\0';
     private static final char SECOND_PLAYER = 'O';
+    private static final String MESSAGE_FOR_ALREADY_OCCUPIED_POSITION = "The position selected is already occupied. Please select an unoccupied position in the board";
     private static final String MESSAGE_FOR_INVALID_POSITION = "The position selected is invalid. Please select a number from 0, 1 or 2";
     private char[][] ticTacToeGameBoard;
     private int numberOfCellsFilled;
@@ -26,11 +28,11 @@ public class TicTacToeGame {
 
     public void markPlayerAtRowColumnInGameBoard(char player, int row, int column) throws InvalidMoveException {
         if(isRowAndColumnWithinUpperAndLowerLimit(row, column)) {
-            if(getTicTacToeGameBoard(row, column) == '\0') {
+            if(getTicTacToeGameBoard(row, column) == INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD) {
                 ticTacToeGameBoard[row][column] = player;
                 numberOfCellsFilled++;
             } else {
-                throw new InvalidMoveException("The position selected is already occupied. Please select an unoccupied position in the board");
+                throw new InvalidMoveException(MESSAGE_FOR_ALREADY_OCCUPIED_POSITION);
             }
         } else {
             throw new InvalidMoveException(MESSAGE_FOR_INVALID_POSITION);
