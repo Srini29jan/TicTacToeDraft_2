@@ -62,7 +62,11 @@ public class TicTacToeGame {
     }
 
     public char checkForWinnerInTheGame() {
-        return returnWinnerForStrikeInAnyRow();
+        char winner = returnWinnerForStrikeInAnyRow();
+        if(winner == CHARACTER_NULL && getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO) != CHARACTER_NULL && getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO) == getTicTacToeGameBoard(GRID_ONE, GRID_ZERO) && getTicTacToeGameBoard(GRID_ONE, GRID_ZERO) == getTicTacToeGameBoard(GRID_TWO, GRID_ZERO)) {
+            return getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO);
+        }
+        return winner;
     }
 
     private char returnWinnerForStrikeInAnyRow() {
