@@ -58,4 +58,11 @@ public class TicTacToeGame {
     public char getCurrentPlayer() {
         return numberOfCellsFilled % NUMBER_TWO == NUMBER_ZERO ? FIRST_PLAYER : SECOND_PLAYER;
     }
+
+    public char checkForWinnerInTheGame() {
+        if (getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO) != INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD && getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO) == getTicTacToeGameBoard(GRID_ZERO, GRID_ONE) && getTicTacToeGameBoard(GRID_ZERO, GRID_ONE) == getTicTacToeGameBoard(GRID_ZERO, 2)) {
+            return getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO);
+        }
+        return '\0';
+    }
 }
