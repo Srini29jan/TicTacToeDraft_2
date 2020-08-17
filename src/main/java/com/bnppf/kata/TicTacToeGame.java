@@ -68,8 +68,13 @@ public class TicTacToeGame {
         char valueAtThirdCellInFirstColumn = getTicTacToeGameBoard(GRID_TWO, GRID_ZERO);
         if(winner == CHARACTER_NULL && valueAtFirstCellInFirstColumn != CHARACTER_NULL && valueAtFirstCellInFirstColumn == valueAtSecondCellInFirstColumn && valueAtSecondCellInFirstColumn == valueAtThirdCellInFirstColumn) {
             return valueAtFirstCellInFirstColumn;
-        } else if(getTicTacToeGameBoard(GRID_ZERO, GRID_ONE) != CHARACTER_NULL && getTicTacToeGameBoard(GRID_ZERO, GRID_ONE) == getTicTacToeGameBoard(GRID_ONE, GRID_ONE) && getTicTacToeGameBoard(GRID_ONE, GRID_ONE) == getTicTacToeGameBoard(GRID_TWO, GRID_ONE)) {
-            return  getTicTacToeGameBoard(GRID_ZERO, GRID_ONE);
+        } else {
+            char valueAtFirstCellInSecondColumn = getTicTacToeGameBoard(GRID_ZERO, GRID_ONE);
+            char valueAtSecondCellInSecondColumn = getTicTacToeGameBoard(GRID_ONE, GRID_ONE);
+            char valueAtThirdCellInSecondColumn = getTicTacToeGameBoard(GRID_TWO, GRID_ONE);
+            if(valueAtFirstCellInSecondColumn != CHARACTER_NULL && valueAtFirstCellInSecondColumn == valueAtSecondCellInSecondColumn && valueAtSecondCellInSecondColumn == valueAtThirdCellInSecondColumn) {
+                return valueAtFirstCellInSecondColumn;
+            }
         }
         return winner;
     }
