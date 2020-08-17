@@ -11,6 +11,8 @@ public class TicTacToeGameTest {
 
     private static final int GRID_ONE = 1;
 
+    private static final int GRID_TWO = 2;
+
     private static final int GIRD_ZERO = 0;
 
     private static final int INVALID_ROW_OR_COLUMN_NUMBER_NEGATIVE_ONE = -1;
@@ -169,9 +171,9 @@ public class TicTacToeGameTest {
 
         TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GIRD_ZERO, GRID_ONE);
 
-        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(2, GIRD_ZERO);
+        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GRID_TWO, GIRD_ZERO);
 
-        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GIRD_ZERO, 2);
+        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GIRD_ZERO, GRID_TWO);
 
         assertEquals(FIRST_PLAYER, TIC_TAC_TOE_GAME.checkForWinnerInTheGame());
 

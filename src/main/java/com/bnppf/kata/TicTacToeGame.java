@@ -4,12 +4,14 @@ import com.bnppf.kata.exception.InvalidMoveException;
 
 public class TicTacToeGame {
     private static final int GRID_ONE = 1;
+    private static final int GRID_TWO = 2;
     private static final int GRID_ZERO = 0;
     private static final int LOWER_LIMIT_OF_ROW_AND_COLUMN = 0;
     private static final int NUMBER_OF_GRIDS_IN_GAME_BOARD = 3;
     private static final int NUMBER_TWO = 2;
     private static final int NUMBER_ZERO = 0;
     private static final int UPPER_LIMIT_OF_ROW_AND_COLUMN = 2;
+    private static final char CHARACTER_NULL = '\0';
     private static final char FIRST_PLAYER = 'X';
     private static final char INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD = '\0';
     private static final char SECOND_PLAYER = 'O';
@@ -60,9 +62,9 @@ public class TicTacToeGame {
     }
 
     public char checkForWinnerInTheGame() {
-        if (getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO) != INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD && getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO) == getTicTacToeGameBoard(GRID_ZERO, GRID_ONE) && getTicTacToeGameBoard(GRID_ZERO, GRID_ONE) == getTicTacToeGameBoard(GRID_ZERO, 2)) {
+        if (getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO) != INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD && getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO) == getTicTacToeGameBoard(GRID_ZERO, GRID_ONE) && getTicTacToeGameBoard(GRID_ZERO, GRID_ONE) == getTicTacToeGameBoard(GRID_ZERO, GRID_TWO)) {
             return getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO);
         }
-        return '\0';
+        return CHARACTER_NULL;
     }
 }
