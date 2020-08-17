@@ -63,8 +63,11 @@ public class TicTacToeGame {
 
     public char checkForWinnerInTheGame() {
         char winner = returnWinnerForStrikeInAnyRow();
-        if(winner == CHARACTER_NULL && getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO) != CHARACTER_NULL && getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO) == getTicTacToeGameBoard(GRID_ONE, GRID_ZERO) && getTicTacToeGameBoard(GRID_ONE, GRID_ZERO) == getTicTacToeGameBoard(GRID_TWO, GRID_ZERO)) {
-            return getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO);
+        char valueAtFirstCellInFirstColumn = getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO);
+        char valueAtSecondCellInFirstColumn = getTicTacToeGameBoard(GRID_ONE, GRID_ZERO);
+        char valueAtThirdCellInFirstColumn = getTicTacToeGameBoard(GRID_TWO, GRID_ZERO);
+        if(winner == CHARACTER_NULL && valueAtFirstCellInFirstColumn != CHARACTER_NULL && valueAtFirstCellInFirstColumn == valueAtSecondCellInFirstColumn && valueAtSecondCellInFirstColumn == valueAtThirdCellInFirstColumn) {
+            return valueAtFirstCellInFirstColumn;
         }
         return winner;
     }
