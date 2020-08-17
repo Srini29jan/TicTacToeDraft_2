@@ -62,6 +62,10 @@ public class TicTacToeGame {
     }
 
     public char checkForWinnerInTheGame() {
+        return returnWinnerForStrikeInAnyRow();
+    }
+
+    private char returnWinnerForStrikeInAnyRow() {
         char valueAtFirstCellInFirstRow = getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO);
         char valueAtSecondCellInFirstRow = getTicTacToeGameBoard(GRID_ZERO, GRID_ONE);
         char valueAtThirdCellInFirstRow = getTicTacToeGameBoard(GRID_ZERO, GRID_TWO);
