@@ -74,6 +74,8 @@ public class TicTacToeGame {
             char valueAtThirdCellInSecondColumn = getTicTacToeGameBoard(GRID_TWO, GRID_ONE);
             if(valueAtFirstCellInSecondColumn != CHARACTER_NULL && valueAtFirstCellInSecondColumn == valueAtSecondCellInSecondColumn && valueAtSecondCellInSecondColumn == valueAtThirdCellInSecondColumn) {
                 return valueAtFirstCellInSecondColumn;
+            } else if(getTicTacToeGameBoard(GRID_ZERO, GRID_TWO) != CHARACTER_NULL && getTicTacToeGameBoard(GRID_ZERO, GRID_TWO) == getTicTacToeGameBoard(GRID_ONE, GRID_TWO) && getTicTacToeGameBoard(GRID_ONE, GRID_TWO) == getTicTacToeGameBoard(GRID_TWO, GRID_TWO)) {
+                return getTicTacToeGameBoard(GRID_ZERO, GRID_TWO);
             }
         }
         return winner;
