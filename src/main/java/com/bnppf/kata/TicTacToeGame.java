@@ -68,6 +68,9 @@ public class TicTacToeGame {
         }if(winner == CHARACTER_NULL) {
             winner = returnWinnerForStrikeInAnyDiagonal();
         }
+        if(winner == CHARACTER_NULL && numberOfCellsFilled == 9) {
+            winner = 'D';
+        }
         return winner;
     }
 
