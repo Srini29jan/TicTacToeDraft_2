@@ -10,8 +10,10 @@ public class TicTacToeGame {
     private static final int NUMBER_OF_GRIDS_IN_GAME_BOARD = 3;
     private static final int NUMBER_TWO = 2;
     private static final int NUMBER_ZERO = 0;
+    private static final int TOTAL_NUMBER_OF_CELLS_IN_GAME_BOARD = 9;
     private static final int UPPER_LIMIT_OF_ROW_AND_COLUMN = 2;
     private static final char CHARACTER_NULL = '\0';
+    private static final char CHARACTER_REPRESENTING_GAME_DRAWN = 'D';
     private static final char FIRST_PLAYER = 'X';
     private static final char INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD = '\0';
     private static final char SECOND_PLAYER = 'O';
@@ -68,8 +70,8 @@ public class TicTacToeGame {
         }if(winner == CHARACTER_NULL) {
             winner = returnWinnerForStrikeInAnyDiagonal();
         }
-        if(winner == CHARACTER_NULL && numberOfCellsFilled == 9) {
-            winner = 'D';
+        if(winner == CHARACTER_NULL && numberOfCellsFilled == TOTAL_NUMBER_OF_CELLS_IN_GAME_BOARD) {
+            winner = CHARACTER_REPRESENTING_GAME_DRAWN;
         }
         return winner;
     }

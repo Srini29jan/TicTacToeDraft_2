@@ -28,6 +28,7 @@ public class TicTacToeGameTest {
     private static final char INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD = '\0';
 
     private static final char SECOND_PLAYER = 'O';
+    public static final char CHARACTER_REPRESENTING_GAME_DRAWN = 'D';
 
     private TicTacToeGame TIC_TAC_TOE_GAME;
 
@@ -327,7 +328,8 @@ public class TicTacToeGameTest {
 
         TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GRID_ONE, GRID_TWO);
 
-        assertEquals('D', TIC_TAC_TOE_GAME.checkForWinnerInTheGame());
+        assertEquals(CHARACTER_REPRESENTING_GAME_DRAWN, TIC_TAC_TOE_GAME.checkForWinnerInTheGame());
+
 
     }
 }
