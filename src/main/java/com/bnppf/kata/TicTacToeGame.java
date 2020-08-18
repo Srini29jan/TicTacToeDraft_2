@@ -71,6 +71,8 @@ public class TicTacToeGame {
         char valueAtBottomRightCell = getTicTacToeGameBoard(GRID_TWO, GRID_TWO);
         if(winner == CHARACTER_NULL && valueAtTopLeftCell != INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD && valueAtTopLeftCell == valueAtMiddleCell && valueAtTopLeftCell == valueAtBottomRightCell) {
             return valueAtTopLeftCell;
+        } else if (getTicTacToeGameBoard(GRID_ZERO, GRID_TWO) != INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD && getTicTacToeGameBoard(GRID_ZERO, GRID_TWO) == valueAtMiddleCell && getTicTacToeGameBoard(GRID_ZERO, GRID_TWO) == getTicTacToeGameBoard(GRID_TWO, GRID_ZERO)) {
+            return getTicTacToeGameBoard(GRID_ZERO, GRID_TWO);
         }
         return winner;
     }
