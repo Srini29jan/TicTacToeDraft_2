@@ -63,25 +63,8 @@ public class TicTacToeGame {
 
     public char checkForWinnerInTheGame() {
         char winner = returnWinnerForStrikeInAnyRow();
-        char valueAtFirstCellInFirstColumn = getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO);
-        char valueAtSecondCellInFirstColumn = getTicTacToeGameBoard(GRID_ONE, GRID_ZERO);
-        char valueAtThirdCellInFirstColumn = getTicTacToeGameBoard(GRID_TWO, GRID_ZERO);
-        if(winner == CHARACTER_NULL && valueAtFirstCellInFirstColumn != CHARACTER_NULL && valueAtFirstCellInFirstColumn == valueAtSecondCellInFirstColumn && valueAtSecondCellInFirstColumn == valueAtThirdCellInFirstColumn) {
-            return valueAtFirstCellInFirstColumn;
-        } else {
-            char valueAtFirstCellInSecondColumn = getTicTacToeGameBoard(GRID_ZERO, GRID_ONE);
-            char valueAtSecondCellInSecondColumn = getTicTacToeGameBoard(GRID_ONE, GRID_ONE);
-            char valueAtThirdCellInSecondColumn = getTicTacToeGameBoard(GRID_TWO, GRID_ONE);
-            if(valueAtFirstCellInSecondColumn != CHARACTER_NULL && valueAtFirstCellInSecondColumn == valueAtSecondCellInSecondColumn && valueAtSecondCellInSecondColumn == valueAtThirdCellInSecondColumn) {
-                return valueAtFirstCellInSecondColumn;
-            } else {
-                char valueAtFirstCellInThirdColumn = getTicTacToeGameBoard(GRID_ZERO, GRID_TWO);
-                char valueAtSecondCellInThirdColumn = getTicTacToeGameBoard(GRID_ONE, GRID_TWO);
-                char valueAtThirdCellInThirdColumn = getTicTacToeGameBoard(GRID_TWO, GRID_TWO);
-                if(valueAtFirstCellInThirdColumn != CHARACTER_NULL && valueAtFirstCellInThirdColumn == valueAtSecondCellInThirdColumn && valueAtSecondCellInThirdColumn == valueAtThirdCellInThirdColumn) {
-                    return valueAtFirstCellInThirdColumn;
-                }
-            }
+        if(winner == CHARACTER_NULL) {
+            winner = returnWinnerForStrikeInAnyColumn();
         }
         return winner;
     }
@@ -104,6 +87,30 @@ public class TicTacToeGame {
                 char valueAtThirdCellInThirdRow = getTicTacToeGameBoard(GRID_TWO, GRID_TWO);
                 if (valueAtFirstCellInThirdRow != INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD && valueAtFirstCellInThirdRow == valueAtSecondCellInThirdRow && valueAtSecondCellInThirdRow == valueAtThirdCellInThirdRow) {
                     return valueAtFirstCellInThirdRow;
+                }
+            }
+        }
+        return CHARACTER_NULL;
+    }
+
+    private char returnWinnerForStrikeInAnyColumn() {
+        char valueAtFirstCellInFirstColumn = getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO);
+        char valueAtSecondCellInFirstColumn = getTicTacToeGameBoard(GRID_ONE, GRID_ZERO);
+        char valueAtThirdCellInFirstColumn = getTicTacToeGameBoard(GRID_TWO, GRID_ZERO);
+        if(valueAtFirstCellInFirstColumn != CHARACTER_NULL && valueAtFirstCellInFirstColumn == valueAtSecondCellInFirstColumn && valueAtSecondCellInFirstColumn == valueAtThirdCellInFirstColumn) {
+            return valueAtFirstCellInFirstColumn;
+        } else {
+            char valueAtFirstCellInSecondColumn = getTicTacToeGameBoard(GRID_ZERO, GRID_ONE);
+            char valueAtSecondCellInSecondColumn = getTicTacToeGameBoard(GRID_ONE, GRID_ONE);
+            char valueAtThirdCellInSecondColumn = getTicTacToeGameBoard(GRID_TWO, GRID_ONE);
+            if(valueAtFirstCellInSecondColumn != CHARACTER_NULL && valueAtFirstCellInSecondColumn == valueAtSecondCellInSecondColumn && valueAtSecondCellInSecondColumn == valueAtThirdCellInSecondColumn) {
+                return valueAtFirstCellInSecondColumn;
+            } else {
+                char valueAtFirstCellInThirdColumn = getTicTacToeGameBoard(GRID_ZERO, GRID_TWO);
+                char valueAtSecondCellInThirdColumn = getTicTacToeGameBoard(GRID_ONE, GRID_TWO);
+                char valueAtThirdCellInThirdColumn = getTicTacToeGameBoard(GRID_TWO, GRID_TWO);
+                if(valueAtFirstCellInThirdColumn != CHARACTER_NULL && valueAtFirstCellInThirdColumn == valueAtSecondCellInThirdColumn && valueAtSecondCellInThirdColumn == valueAtThirdCellInThirdColumn) {
+                    return valueAtFirstCellInThirdColumn;
                 }
             }
         }
