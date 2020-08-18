@@ -66,6 +66,9 @@ public class TicTacToeGame {
         if(winner == CHARACTER_NULL) {
             winner = returnWinnerForStrikeInAnyColumn();
         }
+        if(winner == CHARACTER_NULL && getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO) != INITIAL_VALUE_OF_A_CELL_IN_GAME_BOARD && getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO) == getTicTacToeGameBoard(GRID_ONE, GRID_ONE) && getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO) == getTicTacToeGameBoard(GRID_TWO, GRID_TWO)) {
+            return getTicTacToeGameBoard(GRID_ZERO, GRID_ZERO);
+        }
         return winner;
     }
 

@@ -270,4 +270,21 @@ public class TicTacToeGameTest {
 
     }
 
+    @Test
+    public void checkIfXIsReturnedIfXFillsThreeSquaresFromLeftTopToRightBottomDiagonal() throws InvalidMoveException {
+
+        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GIRD_ZERO, GIRD_ZERO);
+
+        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GIRD_ZERO, GRID_TWO);
+
+        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GRID_ONE, GRID_ONE);
+
+        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GRID_ONE, GRID_TWO);
+
+        TIC_TAC_TOE_GAME.markCurrentPlayerAtRowColumnInGameBoard(GRID_TWO, GRID_TWO);
+
+        assertEquals(FIRST_PLAYER, TIC_TAC_TOE_GAME.checkForWinnerInTheGame());
+
+    }
+
 }
