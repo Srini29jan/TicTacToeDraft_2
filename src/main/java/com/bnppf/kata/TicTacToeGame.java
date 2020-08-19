@@ -64,14 +64,18 @@ public class TicTacToeGame {
     }
 
     public char checkForWinnerInTheGame() {
-        char winner = returnWinnerForStrikeInAnyRow();
-        if(winner == CHARACTER_NULL) {
-            winner = returnWinnerForStrikeInAnyColumn();
-        }if(winner == CHARACTER_NULL) {
-            winner = returnWinnerForStrikeInAnyDiagonal();
-        }
-        if(winner == CHARACTER_NULL && numberOfCellsFilled == TOTAL_NUMBER_OF_CELLS_IN_GAME_BOARD) {
-            winner = CHARACTER_REPRESENTING_GAME_DRAWN;
+        char winner = CHARACTER_NULL;
+        if(numberOfCellsFilled >= 5) {
+            winner = returnWinnerForStrikeInAnyRow();
+            if (winner == CHARACTER_NULL) {
+                winner = returnWinnerForStrikeInAnyColumn();
+            }
+            if (winner == CHARACTER_NULL) {
+                winner = returnWinnerForStrikeInAnyDiagonal();
+            }
+            if (winner == CHARACTER_NULL && numberOfCellsFilled == TOTAL_NUMBER_OF_CELLS_IN_GAME_BOARD) {
+                winner = CHARACTER_REPRESENTING_GAME_DRAWN;
+            }
         }
         return winner;
     }
