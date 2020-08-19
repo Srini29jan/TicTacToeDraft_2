@@ -7,6 +7,7 @@ public class TicTacToeGame {
     private static final int GRID_TWO = 2;
     private static final int GRID_ZERO = 0;
     private static final int LOWER_LIMIT_OF_ROW_AND_COLUMN = 0;
+    private static final int MINIMUM_NUMBER_OF_CELLS_REQUIRED_TO_BE_FILLED_TO_DECIDE_WINNER = 5;
     private static final int NUMBER_OF_GRIDS_IN_GAME_BOARD = 3;
     private static final int NUMBER_TWO = 2;
     private static final int NUMBER_ZERO = 0;
@@ -65,7 +66,7 @@ public class TicTacToeGame {
 
     public char checkForWinnerInTheGame() {
         char winner = CHARACTER_NULL;
-        if(numberOfCellsFilled >= 5) {
+        if(numberOfCellsFilled >= MINIMUM_NUMBER_OF_CELLS_REQUIRED_TO_BE_FILLED_TO_DECIDE_WINNER) {
             winner = returnWinnerForStrikeInAnyRow();
             if (winner == CHARACTER_NULL) {
                 winner = returnWinnerForStrikeInAnyColumn();
